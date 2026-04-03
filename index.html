@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Gửi anh yêu 💖</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .envelope {
+        width: 320px;
+        height: 200px;
+        background: #ff6f91;
+        position: relative;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .letter {
+        display: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 90%;
+        max-width: 700px;
+        background: white;
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        line-height: 1.7;
+        color: #444;
+        overflow-y: auto;
+        max-height: 90vh;
+    }
+
+    h1 {
+        text-align: center;
+        color: #ff4d6d;
+    }
+
+    .date {
+        text-align: center;
+        color: #888;
+        font-size: 14px;
+    }
+
+    .highlight {
+        background: #fff0f3;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 15px 0;
+        font-style: italic;
+    }
+
+    .signature {
+        text-align: right;
+        margin-top: 20px;
+        color: #ff4d6d;
+        font-weight: bold;
+    }
+
+    .heart {
+        text-align: center;
+        font-size: 24px;
+        animation: beat 1.2s infinite;
+    }
+
+    @keyframes beat {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+
+    .fade {
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="envelope" onclick="openLetter()">
+    💌 Bấm vào đây để mở thư
+</div>
+
+<div class="letter" id="letter">
+    <div class="date fade">04.04.2026</div>
+    <h1 class="fade">Gửi anh yêu của em 💖</h1>
+
+    <p class="fade">Eo ôi, ngại thật ý chứ. Chả hiểu sao đi gọi người kém tuổi hơn mình là anh lại còn là anh yêu nữa chứ. Nhưng thôi yêu rồi nên mình nhắm mắt gọi luôn hihi.</p>
+
+    <p class="fade">Khoảng thời gian vừa qua anh thấy như thế nào? Còn với em, em cảm thấy rất hạnh phúc và nó diễn ra như một giấc mơ ý haha.</p>
+
+    <p class="fade">Nhớ lần đầu tiên có lịch hẹn với nhau, trời mưa rất to nhưng cuối cùng lại tạnh… chắc là ý trời đó ^.^</p>
+
+    <p class="fade">Từ hai người xa lạ mà giờ như tri kỷ 20 năm. Nghi vấn là em bị anh lừa rồi 😆</p>
+
+    <p class="fade">Cảm ơn anh vì đã đến bên em, luôn dịu dàng và tử tế với em.</p>
+
+    <p class="fade">Em mong chúng ta có thể nắm tay nhau đi thật xa nhé!</p>
+
+    <div class="highlight fade">
+        💝 "Gửi tặng anh ngàn chiếc ôm dưới hình hài của một chiếc áo" 💝<br><br>
+        Mỗi khi anh mặc nó, hãy nghĩ là em đang ôm anh nhé!
+    </div>
+
+    <div class="signature fade">
+        Love you,<br>
+        H&lt;3H
+    </div>
+
+    <div class="heart">💗</div>
+</div>
+
+<audio id="music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+</audio>
+
+<script>
+function openLetter() {
+    document.querySelector('.envelope').style.display = 'none';
+    document.getElementById('letter').style.display = 'block';
+
+    let music = document.getElementById("music");
+    music.play();
+
+    let items = document.querySelectorAll('.fade');
+    items.forEach((el, i) => {
+        el.style.animationDelay = (i * 0.5) + "s";
+    });
+}
+</script>
+
+</body>
+</html>
